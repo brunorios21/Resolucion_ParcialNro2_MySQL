@@ -10,7 +10,7 @@ join Pedidos P on c.IDCliente = p.IDCliente
 join `Detalles Pedido` DP on p.IDPedido = DP.IDPedido
 join Productos PR on DP.IDProducto = PR.IDProducto
 join Proveedores PV on PR.IDProveedor = PV.IDProveedor
--- La condición agrupa el caso de igualdad normal y el caso donde AMBOS son nulos [cite: 405]
+-- La condición agrupa el caso de igualdad normal y el caso donde AMBOS son nulos 
 where (c.Region = PV.Region or (c.Region is null and PV.Region is null ))
 order by c.Region;
 --  Calcular el total solicitado (en cantidades, y en importe total) en 2020,
